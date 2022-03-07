@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - echo Instalando aplicacion
+  pre_build:
+    commands:
+      - echo Instalando dependencias de NPM.
+      - npm install
+  build:
+    commands:
+      - echo Build comienza a `date`
+      - echo Compilando el codigo Node.js
+      - npm run build
+  post_build:
+    commands:
+      - echo Build concluido a `date`
+artifacts:
+  files:
+    - '**/*'

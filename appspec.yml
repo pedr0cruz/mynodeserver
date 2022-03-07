@@ -1,0 +1,19 @@
+version: 0.0
+os: linux
+files:
+  - source: /app/
+    destination: /home/app/myNodeServer
+    overwrite: true
+permissions:
+  - object: /
+    pattern: "**"
+    owner: ec2-user
+hooks:
+  BeforeInstall:
+    - location: scripts/BeforeInstall.sh
+      timeout: 300
+      runas: ec2-user
+  AfterInstall:
+    - location: scripts/AfterInstall.sh
+      timeout: 300
+      runas: ec2-user
