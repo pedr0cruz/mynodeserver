@@ -18,7 +18,7 @@ app.use(cors());
 // Servidor HTTP
 const serverHttp = http.createServer(app);
 serverHttp.listen(process.env.HTTP_PORT, process.env.IP);
-
+/*
 // Opciones para el servidor https, para usar el certificado TLS
 const httpsServerOptions = {
     key: fs.readFileSync(process.env.KEY_PATH),
@@ -34,7 +34,7 @@ app.use((req, res, next) =>
 {
     if (req.secure) next(); else res.redirect(`https://${req.headers.host}${req.url}`);
 });
-
+*/
 // Contenido estático
 app.use(express.static('./public'));
 
@@ -55,3 +55,4 @@ app.get('*', function (req, res)
     res.status(404).send('Error 404 - Recurso no encontrado');
 });
 
+console.log('Servidor listo en: ', process.env.IP, ':', process.env.HTTP_PORT);
