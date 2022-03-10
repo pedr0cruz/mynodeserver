@@ -55,4 +55,4 @@ app.get('*', function (req, res)
     res.status(404).send('Error 404 - Recurso no encontrado');
 });
 
-console.log('Servidor listo en: ', process.env.IP, ':', process.env.HTTP_PORT);
+console.log('Servidor activo en puerto: ', process.env.HTTP_PORT);
