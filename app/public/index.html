@@ -21,7 +21,7 @@
     function getUuid() {
         $.ajax({
             url: "http://127.0.0.1/api/get-uuid",
-            type: 'GET',
+            type: 'GET', 
             success: function (res) {
                 console.log(res);
                 $('#result').html(res)
